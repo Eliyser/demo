@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<!--通过xmlns:th="http://www.thymeleaf.org"命令空间，将静态页面转换为动态的视图，需要进行动态处理的元素将使用“th:"前缀-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>learn Resources</title>
+</head>
+<body>
+<div style="text-align:center;margin:0 auto;width:1000px;">
+    <h1>学习资源大放送，爱我就关注嘟嘟公众号：嘟爷java超神学堂（javaLearn)</h1>
+    <table width="100%" borderzhuzhu="1" cellspacing="1" cellpadding="0">
+        <tr>
+            <td>教程名称</td>
+            <td>地址</td>
+        </tr>
+
+        <tr th:each="learn:${learnList}">
+            <td th:text="${learn.name}">嘟嘟MD-SpringBoot干货系列</td>
+            <td><a th:href="${learn.address}" target="_blank">点我</a></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
